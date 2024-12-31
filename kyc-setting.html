@@ -1,0 +1,3782 @@
+<!-- meta tags and other links -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hyderabadi-Chai - KYC Setting</title>
+
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="assets/images/logo_icon/favicon.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/global/css/bootstrap.min.css?v=2.0" />
+
+    <link
+      rel="stylesheet"
+      href="assets/admin/css/vendor/bootstrap-toggle.min.css"
+    />
+    <link rel="stylesheet" href="assets/global/css/all.min.css?v=2.0" />
+    <link rel="stylesheet" href="assets/global/css/line-awesome.min.css" />
+
+    <link rel="stylesheet" href="assets/global/css/select2.min.css" />
+    <link rel="stylesheet" href="assets/admin/css/app.css?v=2.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+      integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .form-field {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid #cdcdcd;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        cursor: grab;
+        background: #fff;
+      }
+
+      .form-field .title {
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .form-field .form-field__item {
+        min-width: 170px;
+        text-align: left;
+      }
+
+      .addedField.simple_with_drop.ui-sortable {
+        min-width: 900px;
+      }
+
+      .form-field .form-field__item:last-child {
+        text-align: right;
+      }
+
+      .submitRequired {
+        cursor: unset;
+      }
+
+      .form-field__wrapper {
+        overflow-x: auto;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- page-wrapper start -->
+    <div class="page-wrapper default-version">
+      <div class="sidebar bg--dark">
+        <button class="res-sidebar-close-btn">
+          <i class="las la-times"></i>
+        </button>
+        <div class="sidebar__inner">
+          <div class="sidebar__logo">
+            <a href="dashboard.html" class="sidebar__main-logo"
+              ><img src="assets/images/logo_icon/logo.png" alt="image"
+            /></a>
+          </div>
+          <div class="sidebar__menu-wrapper">
+            <ul class="sidebar__menu">
+              <li class="sidebar-menu-item">
+                <a href="dashboard.html" class="nav-link">
+                  <i class="menu-icon las la-home"></i>
+                  <span class="menu-title">Dashboard</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item">
+                <a href="location.html" class="nav-link">
+                  <i class="menu-icon las la-map-marker-alt"></i>
+                  <span class="menu-title">Location</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item">
+                <a href="category.html" class="nav-link">
+                  <i class="menu-icon las la-utensils"></i>
+                  <span class="menu-title">Foods</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item">
+                <a href="voucher.html" class="nav-link">
+                  <i class="menu-icon las la-gifts"></i>
+                  <span class="menu-title">Voucher and Offer</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon las la-cart-arrow-down"></i>
+                  <span class="menu-title">Orders</span>
+                  <span
+                    class="menu-badge menu-badge-level-one bg--warning ms-auto"
+                  >
+                    <i class="fas fa-exclamation"></i>
+                  </span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item">
+                      <a href="order-pending.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Pending Orders</span>
+                        <span class="menu-badge bg--info ms-auto">5</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="order-delivered.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Delivered Orders</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="order-canceled.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Canceled orders</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon las la-users"></i>
+                  <span class="menu-title">Manage Users</span>
+                  <span
+                    class="menu-badge menu-badge-level-one bg--warning ms-auto"
+                  >
+                    <i class="fas fa-exclamation"></i>
+                  </span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item">
+                      <a href="users-active.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Active Users</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="users-banned.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Banned Users</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="users-email-unverified.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Email Unverified</span>
+                        <span class="menu-badge bg--info ms-auto">8</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="users-mobile-unverified.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Mobile Unverified</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="users-with-balance.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">With Balance</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="all-users.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">All Users</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="users-send-notification.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Send Notification</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon las la-utensils"></i>
+                  <span class="menu-title">Restaurants</span>
+                  <span
+                    class="menu-badge menu-badge-level-one bg--warning ms-auto"
+                  >
+                    <i class="fas fa-exclamation"></i>
+                  </span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item">
+                      <a href="restaurants-active.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Active Restaurants</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="restaurants-banned.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Banned Restaurants</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        href="restaurants-email-unverified.html"
+                        class="nav-link"
+                      >
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Email Unverified</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        href="restaurants-mobile-unverified.html"
+                        class="nav-link"
+                      >
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Mobile Unverified</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        href="restaurants-kyc-unverified.html"
+                        class="nav-link"
+                      >
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">KYC Unverified</span>
+                        <span class="menu-badge bg--info ms-auto">6</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="restaurants-kyc-pending.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">KYC Pending</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="restaurants-with-balance.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">With Balance</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="all-restaurants.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">All Restaurants</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        href="restaurants-send-notification.html"
+                        class="nav-link"
+                      >
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Send Notification</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon las la-file-invoice-dollar"></i>
+                  <span class="menu-title">Deposits</span>
+                  <span
+                    class="menu-badge menu-badge-level-one bg--warning ms-auto"
+                  >
+                    <i class="fas fa-exclamation"></i>
+                  </span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item active">
+                      <a href="deposit-pending.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Pending Deposits</span>
+                        <span class="menu-badge bg--info ms-auto">3</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="deposit-approved.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Approved Deposits</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="deposit-successful.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Successful Deposits</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="deposit-rejected.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Rejected Deposits</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="deposit-initiated.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Initiated Deposits</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="deposit-all.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">All Deposits</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon la la-bank"></i>
+                  <span class="menu-title">Withdrawals</span>
+                  <span
+                    class="menu-badge menu-badge-level-one bg--warning ms-auto"
+                  >
+                    <i class="fas fa-exclamation"></i>
+                  </span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item">
+                      <a href="withdraw-pending.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Pending Withdrawals</span>
+                        <span class="menu-badge bg--info ms-auto">1</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="withdraw-approved.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Approved Withdrawals</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="withdraw-rejected.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Rejected Withdrawals</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="withdraw-all.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">All Withdrawals</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon la la-ticket"></i>
+                  <span class="menu-title">Support Ticket</span>
+                  <span
+                    class="menu-badge menu-badge-level-one bg--warning ms-auto"
+                  >
+                    <i class="fas fa-exclamation"></i>
+                  </span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item">
+                      <a href="ticket-pending.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Pending Ticket</span>
+                        <span class="menu-badge bg--info ms-auto">3</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="ticket-closed.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Closed Ticket</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="ticket-answered.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Answered Ticket</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="all-ticket.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">All Ticket</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon la la-list"></i>
+                  <span class="menu-title">Users Report</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item">
+                      <a href="report-transaction.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Transaction History</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="report-login-history.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Login History</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        href="report-notification-history.html"
+                        class="nav-link"
+                      >
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Notification History</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon la la-list"></i>
+                  <span class="menu-title">Restaurants Report</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item">
+                      <a
+                        href="restaurant-report-transaction.html"
+                        class="nav-link"
+                      >
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Transaction History</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        href="restaurant-report-login-history.html"
+                        class="nav-link"
+                      >
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Login History</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        href="restaurant-report-notification-history.html"
+                        class="nav-link"
+                      >
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Notification History</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item">
+                <a href="subscriber.html" class="nav-link">
+                  <i class="menu-icon las la-thumbs-up"></i>
+                  <span class="menu-title">Subscribers</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item active">
+                <a href="system-setting.html" class="nav-link">
+                  <i class="menu-icon las la-life-ring"></i>
+                  <span class="menu-title">System Setting</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon la la-server"></i>
+                  <span class="menu-title">Extra</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item">
+                      <a href="system-info.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Application</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="system-server-info.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Server</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="system-optimize.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Cache</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="system-system-update.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Update</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item">
+                <a href="request-report.html" class="nav-link">
+                  <i class="menu-icon las la-bug"></i>
+                  <span class="menu-title">Report &amp; Request</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="version-info text-center text-uppercase">
+            <span class="text--primary">Hyderabadi-Chai</span>
+            <span class="text--success">V2.0 </span>
+          </div>
+        </div>
+      </div>
+      <!-- sidebar end -->
+
+      <!-- navbar-wrapper start -->
+      <nav class="navbar-wrapper bg--dark d-flex flex-wrap">
+        <div class="navbar__left">
+          <button type="button" class="res-sidebar-open-btn me-3">
+            <i class="las la-bars"></i>
+          </button>
+          <form class="navbar-search">
+            <input
+              type="search"
+              name="#0"
+              class="navbar-search-field"
+              id="searchInput"
+              autocomplete="off"
+              placeholder="Search here..."
+            />
+            <i class="las la-search"></i>
+            <ul class="search-list"></ul>
+          </form>
+        </div>
+        <div class="navbar__right">
+          <ul class="navbar__action-list">
+            <li>
+              <button
+                type="button"
+                class="primary--layer"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Visit Website"
+              >
+                <a href="" target="_blank"><i class="las la-globe"></i></a>
+              </button>
+            </li>
+            <li class="dropdown">
+              <button
+                type="button"
+                class="primary--layer notification-bell"
+                data-bs-toggle="dropdown"
+                data-display="static"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <span
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Unread Notifications"
+                >
+                  <i class="las la-bell icon-left-right"></i>
+                </span>
+                <span class="notification-count">9+</span>
+              </button>
+              <div
+                class="dropdown-menu dropdown-menu--md p-0 border-0 box--shadow1 dropdown-menu-right"
+              >
+                <div class="dropdown-menu__header">
+                  <span class="caption">Notification</span>
+                  <p>You have 92 unread notification</p>
+                </div>
+                <div class="dropdown-menu__body">
+                  <a href="" class="dropdown-menu__item">
+                    <div class="navbar-notifi">
+                      <div class="navbar-notifi__right">
+                        <h6 class="notifi__title">New member registered</h6>
+                        <span class="time"
+                          ><i class="far fa-clock"></i> 22 hours ago</span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                  <a href="" class="dropdown-menu__item">
+                    <div class="navbar-notifi">
+                      <div class="navbar-notifi__right">
+                        <h6 class="notifi__title">New member registered</h6>
+                        <span class="time"
+                          ><i class="far fa-clock"></i> 1 day ago</span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                  <a href="" class="dropdown-menu__item">
+                    <div class="navbar-notifi">
+                      <div class="navbar-notifi__right">
+                        <h6 class="notifi__title">New member registered</h6>
+                        <span class="time"
+                          ><i class="far fa-clock"></i> 4 days ago</span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                  <a href="" class="dropdown-menu__item">
+                    <div class="navbar-notifi">
+                      <div class="navbar-notifi__right">
+                        <h6 class="notifi__title">New member registered</h6>
+                        <span class="time"
+                          ><i class="far fa-clock"></i> 1 week ago</span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                  <a href="" class="dropdown-menu__item">
+                    <div class="navbar-notifi">
+                      <div class="navbar-notifi__right">
+                        <h6 class="notifi__title">New member registered</h6>
+                        <span class="time"
+                          ><i class="far fa-clock"></i> 1 week ago</span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                  <a href="" class="dropdown-menu__item">
+                    <div class="navbar-notifi">
+                      <div class="navbar-notifi__right">
+                        <h6 class="notifi__title">New member registered</h6>
+                        <span class="time"
+                          ><i class="far fa-clock"></i> 1 week ago</span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="dropdown-menu__footer">
+                  <a href="notifications.html" class="view-all-message"
+                    >View all notifications</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="primary--layer"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="System Setting"
+              >
+                <a href="system-setting.html"><i class="las la-wrench"></i></a>
+              </button>
+            </li>
+            <li class="dropdown d-flex profile-dropdown">
+              <button
+                type="button"
+                data-bs-toggle="dropdown"
+                data-display="static"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <span class="navbar-user">
+                  <span class="navbar-user__thumb"
+                    ><img
+                      src="assets/admin/images/profile/66a22d005e0521721904384.png"
+                      alt="image"
+                  /></span>
+                  <span class="navbar-user__info">
+                    <span class="navbar-user__name">admin</span>
+                  </span>
+                  <span class="icon"
+                    ><i class="las la-chevron-circle-down"></i
+                  ></span>
+                </span>
+              </button>
+              <div
+                class="dropdown-menu dropdown-menu--sm p-0 border-0 box--shadow1 dropdown-menu-right"
+              >
+                <a
+                  href="profile.html"
+                  class="dropdown-menu__item d-flex align-items-center px-3 py-2"
+                >
+                  <i class="dropdown-menu__icon las la-user-circle"></i>
+                  <span class="dropdown-menu__caption">Profile</span>
+                </a>
+
+                <a
+                  href="password.html"
+                  class="dropdown-menu__item d-flex align-items-center px-3 py-2"
+                >
+                  <i class="dropdown-menu__icon las la-key"></i>
+                  <span class="dropdown-menu__caption">Password</span>
+                </a>
+
+                <a
+                  href="index.html"
+                  class="dropdown-menu__item d-flex align-items-center px-3 py-2"
+                >
+                  <i class="dropdown-menu__icon las la-sign-out-alt"></i>
+                  <span class="dropdown-menu__caption">Logout</span>
+                </a>
+              </div>
+              <button type="button" class="breadcrumb-nav-open ms-2 d-none">
+                <i class="las la-sliders-h"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- navbar-wrapper end -->
+
+      <div class="container-fluid px-3 px-sm-0">
+        <div class="body-wrapper">
+          <div class="bodywrapper__inner">
+            <div
+              class="d-flex mb-30 flex-wrap gap-3 justify-content-between align-items-center"
+            >
+              <h6 class="page-title">KYC Setting</h6>
+              <div
+                class="d-flex flex-wrap justify-content-end gap-2 align-items-center breadcrumb-plugins"
+              ></div>
+            </div>
+
+            <div class="submitRequired bg--warning form-change-alert d-none">
+              <i class="fas fa-exclamation-triangle"></i> You've to click on the
+              submit button to apply the changes
+            </div>
+            <div class="row mb-none-30">
+              <div class="col-lg-12">
+                <div class="card">
+                  <div
+                    class="card-header bg--primary d-flex justify-content-between"
+                  >
+                    <h5 class="text-white">KYC Form for User</h5>
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-light float-end form-generate-btn"
+                    >
+                      <i class="la la-fw la-plus"></i>Add New
+                    </button>
+                  </div>
+                  <div class="card-body">
+                    <form method="post">
+                      <input
+                        type="hidden"
+                        name="_token"
+                        value=""
+                        autocomplete="off"
+                      />
+                      <div class="form-field__wrapper">
+                        <div class="addedField simple_with_drop">
+                          <div class="form-field-wrapper" id="0">
+                            <input
+                              type="hidden"
+                              name="form_generator[is_required][]"
+                              value="required"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[extensions][]"
+                              value=""
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[options][]"
+                              value=""
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_width][]"
+                              value="6"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_label][]"
+                              class="form-control"
+                              value="Full Name"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[instruction][]"
+                              class="form-control"
+                              value=""
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_type][]"
+                              class="form-control"
+                              value="text"
+                            />
+
+                            <div class="form-field">
+                              <div
+                                class="form-field__item d-flex align-items-center gap-2"
+                              >
+                                <div class="me-1">
+                                  <i class="las la-braille"></i>
+                                </div>
+                                <div>
+                                  <p class="title">Name</p>
+                                  <p class="value">Full Name</p>
+                                </div>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="title">Type</p>
+                                <p class="value">Text</p>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="title">Width</p>
+                                <p class="value">50%</p>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="value">
+                                  <span class="badge badge--success"
+                                    >Required</span
+                                  >
+                                </p>
+                              </div>
+                              <div class="form-field__item">
+                                <button
+                                  type="button"
+                                  class="btn btn--primary btn-sm editFormData"
+                                  data-form_item='{"type":"text","is_required":"required","instruction":null,"label":"Full Name","extensions":[""],"options":[],"width":"6","old_id":""}'
+                                  data-update_id="0"
+                                >
+                                  <i class="las la-pen me-0"></i>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn--danger btn-sm removeFormData"
+                                >
+                                  <i class="las la-times me-0"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-field-wrapper" id="1">
+                            <input
+                              type="hidden"
+                              name="form_generator[is_required][]"
+                              value="required"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[extensions][]"
+                              value=""
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[options][]"
+                              value=""
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_width][]"
+                              value="6"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_label][]"
+                              class="form-control"
+                              value="Email"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[instruction][]"
+                              class="form-control"
+                              value=""
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_type][]"
+                              class="form-control"
+                              value="email"
+                            />
+
+                            <div class="form-field">
+                              <div
+                                class="form-field__item d-flex align-items-center gap-2"
+                              >
+                                <div class="me-1">
+                                  <i class="las la-braille"></i>
+                                </div>
+                                <div>
+                                  <p class="title">Name</p>
+                                  <p class="value">Email</p>
+                                </div>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="title">Type</p>
+                                <p class="value">Email</p>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="title">Width</p>
+                                <p class="value">50%</p>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="value">
+                                  <span class="badge badge--success"
+                                    >Required</span
+                                  >
+                                </p>
+                              </div>
+                              <div class="form-field__item">
+                                <button
+                                  type="button"
+                                  class="btn btn--primary btn-sm editFormData"
+                                  data-form_item='{"type":"email","is_required":"required","instruction":null,"label":"Email","extensions":[""],"options":[],"width":"6","old_id":""}'
+                                  data-update_id="1"
+                                >
+                                  <i class="las la-pen me-0"></i>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn--danger btn-sm removeFormData"
+                                >
+                                  <i class="las la-times me-0"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-field-wrapper" id="2">
+                            <input
+                              type="hidden"
+                              name="form_generator[is_required][]"
+                              value="required"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[extensions][]"
+                              value=""
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[options][]"
+                              value="Male,Female,Others"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_width][]"
+                              value="6"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_label][]"
+                              class="form-control"
+                              value="Gender"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[instruction][]"
+                              class="form-control"
+                              value=""
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_type][]"
+                              class="form-control"
+                              value="select"
+                            />
+
+                            <div class="form-field">
+                              <div
+                                class="form-field__item d-flex align-items-center gap-2"
+                              >
+                                <div class="me-1">
+                                  <i class="las la-braille"></i>
+                                </div>
+                                <div>
+                                  <p class="title">Name</p>
+                                  <p class="value">Gender</p>
+                                </div>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="title">Type</p>
+                                <p class="value">Select</p>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="title">Width</p>
+                                <p class="value">50%</p>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="value">
+                                  <span class="badge badge--success"
+                                    >Required</span
+                                  >
+                                </p>
+                              </div>
+                              <div class="form-field__item">
+                                <button
+                                  type="button"
+                                  class="btn btn--primary btn-sm editFormData"
+                                  data-form_item='{"type":"select","is_required":"required","instruction":null,"label":"Gender","extensions":[""],"options":["Male","Female","Others"],"width":"6","old_id":""}'
+                                  data-update_id="2"
+                                >
+                                  <i class="las la-pen me-0"></i>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn--danger btn-sm removeFormData"
+                                >
+                                  <i class="las la-times me-0"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-field-wrapper" id="3">
+                            <input
+                              type="hidden"
+                              name="form_generator[is_required][]"
+                              value="required"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[extensions][]"
+                              value=""
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[options][]"
+                              value=""
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_width][]"
+                              value="6"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_label][]"
+                              class="form-control"
+                              value="NID Number"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[instruction][]"
+                              class="form-control"
+                              value=""
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_type][]"
+                              class="form-control"
+                              value="number"
+                            />
+
+                            <div class="form-field">
+                              <div
+                                class="form-field__item d-flex align-items-center gap-2"
+                              >
+                                <div class="me-1">
+                                  <i class="las la-braille"></i>
+                                </div>
+                                <div>
+                                  <p class="title">Name</p>
+                                  <p class="value">NID Number</p>
+                                </div>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="title">Type</p>
+                                <p class="value">Number</p>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="title">Width</p>
+                                <p class="value">50%</p>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="value">
+                                  <span class="badge badge--success"
+                                    >Required</span
+                                  >
+                                </p>
+                              </div>
+                              <div class="form-field__item">
+                                <button
+                                  type="button"
+                                  class="btn btn--primary btn-sm editFormData"
+                                  data-form_item='{"type":"number","is_required":"required","instruction":null,"label":"NID Number","extensions":[""],"options":[],"width":"6","old_id":""}'
+                                  data-update_id="3"
+                                >
+                                  <i class="las la-pen me-0"></i>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn--danger btn-sm removeFormData"
+                                >
+                                  <i class="las la-times me-0"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-field-wrapper" id="4">
+                            <input
+                              type="hidden"
+                              name="form_generator[is_required][]"
+                              value="required"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[extensions][]"
+                              value="jpg,png"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[options][]"
+                              value=""
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_width][]"
+                              value="6"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_label][]"
+                              class="form-control"
+                              value="NID Photo Front"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[instruction][]"
+                              class="form-control"
+                              value="Upload the front side of your NID"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_type][]"
+                              class="form-control"
+                              value="file"
+                            />
+
+                            <div class="form-field">
+                              <div
+                                class="form-field__item d-flex align-items-center gap-2"
+                              >
+                                <div class="me-1">
+                                  <i class="las la-braille"></i>
+                                </div>
+                                <div>
+                                  <p class="title">Name</p>
+                                  <p class="value">NID Photo Front</p>
+                                </div>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="title">Type</p>
+                                <p class="value">File</p>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="title">Width</p>
+                                <p class="value">50%</p>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="value">
+                                  <span class="badge badge--success"
+                                    >Required</span
+                                  >
+                                </p>
+                              </div>
+                              <div class="form-field__item">
+                                <button
+                                  type="button"
+                                  class="btn btn--primary btn-sm editFormData"
+                                  data-form_item='{"type":"file","is_required":"required","instruction":"Upload the front side of your NID","label":"NID Photo Front","extensions":["jpg","png"],"options":[],"width":"6","old_id":""}'
+                                  data-update_id="4"
+                                >
+                                  <i class="las la-pen me-0"></i>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn--danger btn-sm removeFormData"
+                                >
+                                  <i class="las la-times me-0"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-field-wrapper" id="5">
+                            <input
+                              type="hidden"
+                              name="form_generator[is_required][]"
+                              value="required"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[extensions][]"
+                              value="jpg,jpeg,png"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[options][]"
+                              value=""
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_width][]"
+                              value="6"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_label][]"
+                              class="form-control"
+                              value="NID Photo Back"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[instruction][]"
+                              class="form-control"
+                              value="Upload the back side of your NID"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_type][]"
+                              class="form-control"
+                              value="file"
+                            />
+
+                            <div class="form-field">
+                              <div
+                                class="form-field__item d-flex align-items-center gap-2"
+                              >
+                                <div class="me-1">
+                                  <i class="las la-braille"></i>
+                                </div>
+                                <div>
+                                  <p class="title">Name</p>
+                                  <p class="value">NID Photo Back</p>
+                                </div>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="title">Type</p>
+                                <p class="value">File</p>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="title">Width</p>
+                                <p class="value">50%</p>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="value">
+                                  <span class="badge badge--success"
+                                    >Required</span
+                                  >
+                                </p>
+                              </div>
+                              <div class="form-field__item">
+                                <button
+                                  type="button"
+                                  class="btn btn--primary btn-sm editFormData"
+                                  data-form_item='{"type":"file","is_required":"required","instruction":"Upload the back side of your NID","label":"NID Photo Back","extensions":["jpg","jpeg","png"],"options":[],"width":"6","old_id":""}'
+                                  data-update_id="5"
+                                >
+                                  <i class="las la-pen me-0"></i>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn--danger btn-sm removeFormData"
+                                >
+                                  <i class="las la-times me-0"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-field-wrapper" id="6">
+                            <input
+                              type="hidden"
+                              name="form_generator[is_required][]"
+                              value="required"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[extensions][]"
+                              value=""
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[options][]"
+                              value="Programming,Gardening,Traveling,Others"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_width][]"
+                              value="12"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_label][]"
+                              class="form-control"
+                              value="You Hobby"
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[instruction][]"
+                              class="form-control"
+                              value=""
+                            />
+                            <input
+                              type="hidden"
+                              name="form_generator[form_type][]"
+                              class="form-control"
+                              value="checkbox"
+                            />
+
+                            <div class="form-field">
+                              <div
+                                class="form-field__item d-flex align-items-center gap-2"
+                              >
+                                <div class="me-1">
+                                  <i class="las la-braille"></i>
+                                </div>
+                                <div>
+                                  <p class="title">Name</p>
+                                  <p class="value">You Hobby</p>
+                                </div>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="title">Type</p>
+                                <p class="value">Checkbox</p>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="title">Width</p>
+                                <p class="value">100%</p>
+                              </div>
+                              <div class="form-field__item">
+                                <p class="value">
+                                  <span class="badge badge--success"
+                                    >Required</span
+                                  >
+                                </p>
+                              </div>
+                              <div class="form-field__item">
+                                <button
+                                  type="button"
+                                  class="btn btn--primary btn-sm editFormData"
+                                  data-form_item='{"type":"checkbox","is_required":"required","instruction":null,"label":"You Hobby","extensions":[""],"options":["Programming","Gardening","Traveling","Others"],"width":"12","old_id":""}'
+                                  data-update_id="6"
+                                >
+                                  <i class="las la-pen me-0"></i>
+                                </button>
+                                <button
+                                  type="button"
+                                  class="btn btn--danger btn-sm removeFormData"
+                                >
+                                  <i class="las la-times me-0"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <button type="submit" class="btn btn--primary w-100 h-45">
+                        Submit
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="formGenerateModal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Generate Form</h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <i class="las la-times"></i>
+                    </button>
+                  </div>
+                  <form class="generate-form">
+                    <input
+                      type="hidden"
+                      name="_token"
+                      value="T4UnorHvPl14nsbl7KsC4wJpVmdarinHxAPCdcnl"
+                      autocomplete="off"
+                    />
+                    <div class="modal-body">
+                      <input type="hidden" name="update_id" value="" />
+                      <div class="form-group">
+                        <label>Type</label>
+                        <select
+                          name="form_type"
+                          class="form-control select2"
+                          data-minimum-results-for-search="-1"
+                          required
+                        >
+                          <option value="">Select One</option>
+                          <option value="text">Text</option>
+                          <option value="email">Email</option>
+                          <option value="number">Number</option>
+                          <option value="url">URL</option>
+                          <option value="datetime">Date & Time</option>
+                          <option value="date">Date</option>
+                          <option value="time">Time</option>
+                          <option value="textarea">Textarea</option>
+                          <option value="select">Select</option>
+                          <option value="checkbox">Checkbox</option>
+                          <option value="radio">Radio</option>
+                          <option value="file">File</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label>Is Required</label>
+                        <select
+                          name="is_required"
+                          class="form-control select2"
+                          data-minimum-results-for-search="-1"
+                          required
+                        >
+                          <option value="">Select One</option>
+                          <option value="required">Required</option>
+                          <option value="optional">Optional</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label>Label</label>
+                        <input
+                          type="text"
+                          name="form_label"
+                          class="form-control"
+                          required
+                        />
+                      </div>
+                      <div class="form-group extra_area"></div>
+                      <div class="form-group">
+                        <label>Width</label>
+                        <select
+                          name="form_width"
+                          class="form-control select2"
+                          data-minimum-results-for-search="-1"
+                          required
+                        >
+                          <option value="">Select One</option>
+                          <option value="12">100%</option>
+                          <option value="6">50%</option>
+                          <option value="4">33%</option>
+                          <option value="3">25%</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label>Instruction <small>(if any)</small></label>
+                        <input
+                          type="text"
+                          name="instruction"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="submit"
+                        class="btn btn--primary w-100 h-45 generatorSubmit"
+                      >
+                        Add
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- bodywrapper__inner end -->
+        </div>
+        <!-- body-wrapper end -->
+      </div>
+    </div>
+
+    <script src="assets/global/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/global/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/admin/js/vendor/bootstrap-toggle.min.js"></script>
+
+    <link href="assets/global/css/iziToast.min.css" rel="stylesheet" />
+    <link href="assets/global/css/iziToast_custom.css" rel="stylesheet" />
+    <script src="assets/global/js/iziToast.min.js"></script>
+
+    <script>
+      "use strict";
+      const colors = {
+        success: "#28c76f",
+        error: "#eb2222",
+        warning: "#ff9f43",
+        info: "#1e9ff2",
+      };
+
+      const icons = {
+        success: "fas fa-check-circle",
+        error: "fas fa-times-circle",
+        warning: "fas fa-exclamation-triangle",
+        info: "fas fa-exclamation-circle",
+      };
+
+      const notifications = [];
+      const errors = [];
+
+      const triggerToaster = (status, message) => {
+        iziToast[status]({
+          title: status.charAt(0).toUpperCase() + status.slice(1),
+          message: message,
+          position: "topRight",
+          backgroundColor: "#fff",
+          icon: icons[status],
+          iconColor: colors[status],
+          progressBarColor: colors[status],
+          titleSize: "1rem",
+          messageSize: "1rem",
+          titleColor: "#474747",
+          messageColor: "#a2a2a2",
+          transitionIn: "obunceInLeft",
+        });
+      };
+
+      if (notifications.length) {
+        notifications.forEach((element) => {
+          triggerToaster(element[0], element[1]);
+        });
+      }
+
+      if (errors.length) {
+        errors.forEach((error) => {
+          triggerToaster("error", error);
+        });
+      }
+
+      function notify(status, message) {
+        if (typeof message == "string") {
+          triggerToaster(status, message);
+        } else {
+          $.each(message, (i, val) => triggerToaster(status, val));
+        }
+      }
+    </script>
+    <script src="assets/admin/js/jquery-ui.min.js"></script>
+    <script src="assets/global/js/form_generator.js"></script>
+
+    <script src="assets/global/js/nicEdit.js"></script>
+    <script src="assets/admin/js/cuModal.js"></script>
+    <script src="assets/global/js/select2.min.js"></script>
+    <script src="assets/admin/js/app.js?v=2.0"></script>
+
+    <script>
+      "use strict";
+      bkLib.onDomLoaded(function () {
+        $(".nicEdit").each(function (index) {
+          $(this).attr("id", "nicEditor" + index);
+          new nicEditor({
+            fullPanel: true,
+          }).panelInstance("nicEditor" + index, {
+            hasPanel: true,
+          });
+        });
+      });
+      (function ($) {
+        $(document).on(
+          "mouseover ",
+          ".nicEdit-main,.nicEdit-panelContain",
+          function () {
+            $(".nicEdit-main").focus();
+          }
+        );
+
+        $(".breadcrumb-nav-open").on("click", function () {
+          $(this).toggleClass("active");
+          $(".breadcrumb-nav").toggleClass("active");
+        });
+
+        $(".breadcrumb-nav-close").on("click", function () {
+          $(".breadcrumb-nav").removeClass("active");
+        });
+
+        if ($(".topTap").length) {
+          $(".breadcrumb-nav-open").removeClass("d-none");
+        }
+      })(jQuery);
+    </script>
+
+    <script>
+      "use strict";
+      var formGenerator = new FormGenerator();
+      formGenerator.totalField = 7;
+      $(".simple_with_drop").sortable({
+        stop: function (event, ui) {
+          var start = ui.item.data("start");
+          var end = ui.item.index();
+          if (start !== end) {
+            $(".submitRequired").removeClass("d-none");
+          }
+        },
+        start: function (event, ui) {
+          ui.item.data("start", ui.item.index());
+        },
+      });
+    </script>
+
+    <script src="assets/global/js/form_actions.js"></script>
+    <script>
+      if ($("li").hasClass("active")) {
+        $(".sidebar__menu-wrapper").animate(
+          {
+            scrollTop: eval($(".active").offset().top - 320),
+          },
+          500
+        );
+      }
+    </script>
+    <script>
+      "use strict";
+      var routes = [
+        {
+          "admin.login":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin",
+        },
+        {
+          "admin.login":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin",
+        },
+        {
+          "admin.logout":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/logout",
+        },
+        {
+          "admin.password.reset":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/password\/reset",
+        },
+        {
+          "admin.password.":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/password\/reset",
+        },
+        {
+          "admin.password.code.verify":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/password\/code-verify",
+        },
+        {
+          "admin.password.verify.code":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/password\/verify-code",
+        },
+        {
+          "admin.password.reset.form":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/password\/reset\/{token}",
+        },
+        {
+          "admin.password.change":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/password\/reset\/change",
+        },
+        {
+          "admin.dashboard":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/dashboard",
+        },
+        {
+          "admin.chart.deposit.withdraw.sells":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/chart\/deposit-withdraw-sell",
+        },
+        {
+          "admin.chart.transaction":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/chart\/transaction",
+        },
+        {
+          "admin.profile":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/profile",
+        },
+        {
+          "admin.profile.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/profile",
+        },
+        {
+          "admin.password":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/password",
+        },
+        {
+          "admin.password.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/password",
+        },
+        {
+          "admin.notifications":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notifications",
+        },
+        {
+          "admin.notification.read":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/read\/{id}",
+        },
+        {
+          "admin.notifications.read.all":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notifications\/read-all",
+        },
+        {
+          "admin.notifications.delete.all":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notifications\/delete-all",
+        },
+        {
+          "admin.notifications.delete.single":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notifications\/delete-single\/{id}",
+        },
+        {
+          "admin.request.report":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/request-report",
+        },
+        {
+          "admin.":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/request-report",
+        },
+        {
+          "admin.download.attachment":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/download-attachments\/{file_hash}",
+        },
+        {
+          "admin.users.all":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users",
+        },
+        {
+          "admin.users.active":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/active",
+        },
+        {
+          "admin.users.banned":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/banned",
+        },
+        {
+          "admin.users.email.verified":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/email-verified",
+        },
+        {
+          "admin.users.email.unverified":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/email-unverified",
+        },
+        {
+          "admin.users.mobile.unverified":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/mobile-unverified",
+        },
+        {
+          "admin.users.mobile.verified":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/mobile-verified",
+        },
+        {
+          "admin.users.with.balance":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/with-balance",
+        },
+        {
+          "admin.users.detail":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/detail\/{id}",
+        },
+        {
+          "admin.users.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/update\/{id}",
+        },
+        {
+          "admin.users.add.sub.balance":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/add-sub-balance\/{id}",
+        },
+        {
+          "admin.users.notification.single":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/send-notification\/{id}",
+        },
+        {
+          "admin.users.notification.single":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/send-notification\/{id}",
+        },
+        {
+          "admin.users.login":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/login\/{id}",
+        },
+        {
+          "admin.users.status":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/status\/{id}",
+        },
+        {
+          "admin.users.notification.all":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/send-notification",
+        },
+        {
+          "admin.users.notification.all.send":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/send-notification",
+        },
+        {
+          "admin.users.list":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/list",
+        },
+        {
+          "admin.users.segment.count":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/count-by-segment\/{methodName}",
+        },
+        {
+          "admin.users.notification.log":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/users\/notification-log\/{id}",
+        },
+        {
+          "admin.restaurants.all":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants",
+        },
+        {
+          "admin.restaurants.active":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/active",
+        },
+        {
+          "admin.restaurants.banned":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/banned",
+        },
+        {
+          "admin.restaurants.email.verified":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/email-verified",
+        },
+        {
+          "admin.restaurants.email.unverified":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/email-unverified",
+        },
+        {
+          "admin.restaurants.mobile.unverified":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/mobile-unverified",
+        },
+        {
+          "admin.restaurants.kyc.unverified":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/kyc-unverified",
+        },
+        {
+          "admin.restaurants.kyc.pending":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/kyc-pending",
+        },
+        {
+          "admin.restaurants.mobile.verified":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/mobile-verified",
+        },
+        {
+          "admin.restaurants.with.balance":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/with-balance",
+        },
+        {
+          "admin.restaurants.detail":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/detail\/{id}",
+        },
+        {
+          "admin.restaurants.kyc.details":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/kyc-data\/{id}",
+        },
+        {
+          "admin.restaurants.kyc.approve":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/kyc-approve\/{id}",
+        },
+        {
+          "admin.restaurants.kyc.reject":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/kyc-reject\/{id}",
+        },
+        {
+          "admin.restaurants.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/update\/{id}",
+        },
+        {
+          "admin.restaurants.add.sub.balance":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/add-sub-balance\/{id}",
+        },
+        {
+          "admin.restaurants.notification.single":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/send-notification\/{id}",
+        },
+        {
+          "admin.restaurants.notification.single":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/send-notification\/{id}",
+        },
+        {
+          "admin.restaurants.login":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/login\/{id}",
+        },
+        {
+          "admin.restaurants.status":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/status\/{id}",
+        },
+        {
+          "admin.restaurants.notification.all":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/send-notification",
+        },
+        {
+          "admin.restaurants.notification.all.send":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/send-notification",
+        },
+        {
+          "admin.restaurants.list":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/list",
+        },
+        {
+          "admin.restaurants.segment.count":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/count-by-segment\/{methodName}",
+        },
+        {
+          "admin.restaurants.notification.log":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurants\/notification-log\/{id}",
+        },
+        {
+          "admin.subscriber.index":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/subscriber",
+        },
+        {
+          "admin.subscriber.send.email":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/subscriber\/send-email",
+        },
+        {
+          "admin.subscriber.remove":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/subscriber\/remove\/{id}",
+        },
+        {
+          "admin.subscriber.send.email":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/subscriber\/send-email",
+        },
+        {
+          "admin.gateway.automatic.index":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/gateway\/automatic",
+        },
+        {
+          "admin.gateway.automatic.edit":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/gateway\/automatic\/edit\/{alias}",
+        },
+        {
+          "admin.gateway.automatic.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/gateway\/automatic\/update\/{code}",
+        },
+        {
+          "admin.gateway.automatic.remove":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/gateway\/automatic\/remove\/{id}",
+        },
+        {
+          "admin.gateway.automatic.status":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/gateway\/automatic\/status\/{id}",
+        },
+        {
+          "admin.gateway.manual.index":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/gateway\/manual",
+        },
+        {
+          "admin.gateway.manual.create":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/gateway\/manual\/new",
+        },
+        {
+          "admin.gateway.manual.store":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/gateway\/manual\/new",
+        },
+        {
+          "admin.gateway.manual.edit":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/gateway\/manual\/edit\/{alias}",
+        },
+        {
+          "admin.gateway.manual.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/gateway\/manual\/update\/{id}",
+        },
+        {
+          "admin.gateway.manual.status":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/gateway\/manual\/status\/{id}",
+        },
+        {
+          "admin.deposit.list":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/deposit\/all\/{user_id?}",
+        },
+        {
+          "admin.deposit.pending":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/deposit\/pending\/{user_id?}",
+        },
+        {
+          "admin.deposit.rejected":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/deposit\/rejected\/{user_id?}",
+        },
+        {
+          "admin.deposit.approved":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/deposit\/approved\/{user_id?}",
+        },
+        {
+          "admin.deposit.successful":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/deposit\/successful\/{user_id?}",
+        },
+        {
+          "admin.deposit.initiated":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/deposit\/initiated\/{user_id?}",
+        },
+        {
+          "admin.deposit.details":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/deposit\/details\/{id}",
+        },
+        {
+          "admin.deposit.reject":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/deposit\/reject",
+        },
+        {
+          "admin.deposit.approve":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/deposit\/approve\/{id}",
+        },
+        {
+          "admin.withdraw.data.pending":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/withdraw\/pending\/{user_id?}",
+        },
+        {
+          "admin.withdraw.data.approved":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/withdraw\/approved\/{user_id?}",
+        },
+        {
+          "admin.withdraw.data.rejected":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/withdraw\/rejected\/{user_id?}",
+        },
+        {
+          "admin.withdraw.data.all":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/withdraw\/all\/{user_id?}",
+        },
+        {
+          "admin.withdraw.data.details":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/withdraw\/details\/{id}",
+        },
+        {
+          "admin.withdraw.data.approve":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/withdraw\/approve",
+        },
+        {
+          "admin.withdraw.data.reject":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/withdraw\/reject",
+        },
+        {
+          "admin.withdraw.method.index":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/withdraw\/method",
+        },
+        {
+          "admin.withdraw.method.create":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/withdraw\/method\/create",
+        },
+        {
+          "admin.withdraw.method.store":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/withdraw\/method\/create",
+        },
+        {
+          "admin.withdraw.method.edit":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/withdraw\/method\/edit\/{id}",
+        },
+        {
+          "admin.withdraw.method.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/withdraw\/method\/edit\/{id}",
+        },
+        {
+          "admin.withdraw.method.status":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/withdraw\/method\/status\/{id}",
+        },
+        {
+          "admin.report.transaction":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/report\/transaction\/{user_id?}",
+        },
+        {
+          "admin.report.login.history":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/report\/login\/history",
+        },
+        {
+          "admin.report.login.ipHistory":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/report\/login\/ipHistory\/{ip}",
+        },
+        {
+          "admin.report.notification.history":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/report\/notification\/history",
+        },
+        {
+          "admin.report.email.details":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/report\/email\/detail\/{id}",
+        },
+        {
+          "admin.restaurant.report.transaction":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurant-report\/transaction\/{restaurant_id?}",
+        },
+        {
+          "admin.restaurant.report.login.history":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurant-report\/login\/history",
+        },
+        {
+          "admin.restaurant.report.login.ipHistory":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurant-report\/login\/ipHistory\/{ip}",
+        },
+        {
+          "admin.restaurant.report.notification.history":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurant-report\/notification\/history",
+        },
+        {
+          "admin.restaurant.report.email.details":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/restaurant-report\/email\/detail\/{id}",
+        },
+        {
+          "admin.ticket.index":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/ticket",
+        },
+        {
+          "admin.ticket.pending":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/ticket\/pending",
+        },
+        {
+          "admin.ticket.closed":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/ticket\/closed",
+        },
+        {
+          "admin.ticket.answered":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/ticket\/answered",
+        },
+        {
+          "admin.ticket.view":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/ticket\/view\/{id}",
+        },
+        {
+          "admin.ticket.reply":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/ticket\/reply\/{id}",
+        },
+        {
+          "admin.ticket.close":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/ticket\/close\/{id}",
+        },
+        {
+          "admin.ticket.download":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/ticket\/download\/{attachment_id}",
+        },
+        {
+          "admin.ticket.delete":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/ticket\/delete\/{id}",
+        },
+        {
+          "admin.language.manage":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/language",
+        },
+        {
+          "admin.language.manage.store":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/language",
+        },
+        {
+          "admin.language.manage.delete":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/language\/delete\/{id}",
+        },
+        {
+          "admin.language.manage.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/language\/update\/{id}",
+        },
+        {
+          "admin.language.key":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/language\/edit\/{id}",
+        },
+        {
+          "admin.language.import.lang":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/language\/import",
+        },
+        {
+          "admin.language.store.key":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/language\/store\/key\/{id}",
+        },
+        {
+          "admin.language.delete.key":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/language\/delete\/key\/{id}",
+        },
+        {
+          "admin.language.update.key":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/language\/update\/key\/{id}",
+        },
+        {
+          "admin.language.get.key":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/language\/get-keys",
+        },
+        {
+          "admin.setting.system":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/system-setting",
+        },
+        {
+          "admin.setting.general":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/general-setting",
+        },
+        {
+          "admin.":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/general-setting",
+        },
+        {
+          "admin.setting.socialite.credentials":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/setting\/social\/credentials",
+        },
+        {
+          "admin.setting.socialite.credentials.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/setting\/social\/credentials\/update\/{key}",
+        },
+        {
+          "admin.setting.socialite.credentials.status.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/setting\/social\/credentials\/status\/{key}",
+        },
+        {
+          "admin.setting.system.configuration":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/setting\/system-configuration",
+        },
+        {
+          "admin.":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/setting\/system-configuration",
+        },
+        {
+          "admin.setting.logo.icon":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/setting\/logo-icon",
+        },
+        {
+          "admin.setting.logo.icon":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/setting\/logo-icon",
+        },
+        {
+          "admin.setting.custom.css":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/custom-css",
+        },
+        {
+          "admin.":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/custom-css",
+        },
+        {
+          "admin.setting.sitemap":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/sitemap",
+        },
+        {
+          "admin.":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/sitemap",
+        },
+        {
+          "admin.setting.robot":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/robot",
+        },
+        {
+          "admin.":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/robot",
+        },
+        {
+          "admin.setting.cookie":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/cookie",
+        },
+        {
+          "admin.":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/cookie",
+        },
+        {
+          "admin.maintenance.mode":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/maintenance-mode",
+        },
+        {
+          "admin.":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/maintenance-mode",
+        },
+        {
+          "admin.kyc.setting":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/kyc-setting",
+        },
+        {
+          "admin.":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/kyc-setting",
+        },
+        {
+          "admin.setting.notification.global.email":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/global\/email",
+        },
+        {
+          "admin.setting.notification.global.email.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/global\/email\/update",
+        },
+        {
+          "admin.setting.notification.global.sms":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/global\/sms",
+        },
+        {
+          "admin.setting.notification.global.sms.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/global\/sms\/update",
+        },
+        {
+          "admin.setting.notification.global.push":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/global\/push",
+        },
+        {
+          "admin.setting.notification.global.push.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/global\/push\/update",
+        },
+        {
+          "admin.setting.notification.templates":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/templates",
+        },
+        {
+          "admin.setting.notification.template.edit":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/template\/edit\/{type}\/{id}",
+        },
+        {
+          "admin.setting.notification.template.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/template\/update\/{type}\/{id}",
+        },
+        {
+          "admin.setting.notification.email":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/email\/setting",
+        },
+        {
+          "admin.setting.notification.":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/email\/setting",
+        },
+        {
+          "admin.setting.notification.email.test":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/email\/test",
+        },
+        {
+          "admin.setting.notification.sms":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/sms\/setting",
+        },
+        {
+          "admin.setting.notification.":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/sms\/setting",
+        },
+        {
+          "admin.setting.notification.sms.test":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/sms\/test",
+        },
+        {
+          "admin.setting.notification.push":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/notification\/push\/setting",
+        },
+        {
+          "admin.setting.notification.":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/notification\/push\/setting",
+        },
+        {
+          "admin.setting.notification.push.upload":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/notification\/push\/setting\/upload",
+        },
+        {
+          "admin.setting.notification.push.download":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/notification\/notification\/push\/setting\/download",
+        },
+        {
+          "admin.extensions.index":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/extensions",
+        },
+        {
+          "admin.extensions.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/extensions\/update\/{id}",
+        },
+        {
+          "admin.extensions.status":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/extensions\/status\/{id}",
+        },
+        {
+          "admin.system.info":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/system\/info",
+        },
+        {
+          "admin.system.server.info":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/system\/server-info",
+        },
+        {
+          "admin.system.optimize":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/system\/optimize",
+        },
+        {
+          "admin.system.optimize.clear":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/system\/optimize-clear",
+        },
+        {
+          "admin.system.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/system\/system-update",
+        },
+        {
+          "admin.system.update.process":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/system\/system-update",
+        },
+        {
+          "admin.system.update.log":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/system\/system-update\/log",
+        },
+        {
+          "admin.seo":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/seo",
+        },
+        {
+          "admin.frontend.index":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/index",
+        },
+        {
+          "admin.frontend.templates":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/templates",
+        },
+        {
+          "admin.frontend.templates.active":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/templates",
+        },
+        {
+          "admin.frontend.sections":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/frontend-sections\/{key?}",
+        },
+        {
+          "admin.frontend.sections.content":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/frontend-content\/{key}",
+        },
+        {
+          "admin.frontend.sections.element":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/frontend-element\/{key}\/{id?}",
+        },
+        {
+          "admin.frontend.sections.element.slug.check":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/frontend-slug-check\/{key}\/{id?}",
+        },
+        {
+          "admin.frontend.sections.element.seo":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/frontend-element-seo\/{key}\/{id}",
+        },
+        {
+          "admin.frontend.":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/frontend-element-seo\/{key}\/{id}",
+        },
+        {
+          "admin.frontend.remove":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/remove\/{id}",
+        },
+        {
+          "admin.frontend.manage.pages":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/manage-pages",
+        },
+        {
+          "admin.frontend.manage.pages.check.slug":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/manage-pages\/check-slug\/{id?}",
+        },
+        {
+          "admin.frontend.manage.pages.save":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/manage-pages",
+        },
+        {
+          "admin.frontend.manage.pages.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/manage-pages\/update",
+        },
+        {
+          "admin.frontend.manage.pages.delete":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/manage-pages\/delete\/{id}",
+        },
+        {
+          "admin.frontend.manage.section":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/manage-section\/{id}",
+        },
+        {
+          "admin.frontend.manage.section.update":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/manage-section\/{id}",
+        },
+        {
+          "admin.frontend.manage.pages.seo":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/manage-seo\/{id}",
+        },
+        {
+          "admin.frontend.":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/frontend\/manage-seo\/{id}",
+        },
+        {
+          "admin.location.index":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/location",
+        },
+        {
+          "admin.location.store":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/location\/store\/{id?}",
+        },
+        {
+          "admin.location.status":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/location\/status\/{id}",
+        },
+        {
+          "admin.voucher.index":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/voucher",
+        },
+        {
+          "admin.voucher.store":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/voucher\/store\/{id?}",
+        },
+        {
+          "admin.voucher.status":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/voucher\/status\/{id}",
+        },
+        {
+          "admin.order.pending":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/order\/pending",
+        },
+        {
+          "admin.order.delivered":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/order\/delivered\/{type?}\/{id?}",
+        },
+        {
+          "admin.order.canceled":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/order\/canceled",
+        },
+        {
+          "admin.order.details":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/order\/details\/{id}",
+        },
+        {
+          "admin.order.cancel":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/order\/order-cancel",
+        },
+        {
+          "admin.category.index":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/category\/{id?}",
+        },
+        {
+          "admin.food.index":
+            "https:\/\/script.viserlab.com\/Hyderabadi-Chai\/admin\/food\/{category}",
+        },
+      ];
+      var settingsData = Object.assign(
+        {},
+        {
+          general_setting: {
+            keyword: [
+              "general",
+              "fundamental",
+              "site information",
+              "site",
+              "website settings",
+              "basic settings",
+              "global settings",
+              "site color",
+              "timezone",
+              "site currency",
+              "pagination",
+              "currency format",
+              "site title",
+              "base color",
+              "secondary color",
+              "paginate",
+            ],
+            title: "General Setting",
+            subtitle: "Configure the fundamental information of the site.",
+            icon: "las la-cog",
+            route_name: "admin.setting.general",
+          },
+          logo_favicon: {
+            keyword: [
+              "branding",
+              "identity",
+              "logo upload",
+              "site branding",
+              "brand identity",
+              "favicon",
+              "website icon",
+              "website favicon",
+              "website logo",
+            ],
+            title: "Logo and Favicon",
+            subtitle: "Upload your logo and favicon here.",
+            icon: "las la-images",
+            route_name: "admin.setting.logo.icon",
+          },
+          system_configuration: {
+            keyword: [
+              "basic modules",
+              "control",
+              "modules",
+              "system",
+              "configuration settings",
+              "system control",
+              "force ssl",
+              "force secure password",
+              "kyc control",
+              "email control",
+              "sms control",
+              "verification control",
+              "push notification control",
+              "language control",
+              "mobile verification",
+              "email verification",
+            ],
+            title: "System Configuration",
+            subtitle: "Control all of the basic modules of the system.",
+            icon: "las la-cogs",
+            route_name: "admin.setting.system.configuration",
+          },
+          notification_setting: {
+            keyword: [
+              "email configuration",
+              "sms configure",
+              "push notification configure",
+              "email setting",
+              "sms setting",
+              "push notification setting",
+              "firebase setting",
+              "firebase control",
+              "email template",
+              "sms template",
+              "push notification template",
+              "notification template",
+              "smtp",
+              "sendgrid",
+              "send grid",
+              "mailjet",
+              "mail jet",
+              "php",
+              "nexmo",
+              "clickatell",
+              "click a tell",
+              "infobip",
+              "info bip",
+              "message bird",
+              "sms broadcast",
+              "twilio",
+              "text magic",
+              "custom api",
+              "template setting",
+              "global template",
+              "global notification",
+            ],
+            title: "Notification Setting",
+            subtitle:
+              "Control and configure overall notification elements of the system.",
+            icon: "las la-bell",
+            route_name: "admin.setting.notification.global.email",
+          },
+          payment_gateways: {
+            keyword: [
+              "automatic",
+              "manual",
+              "configure payment gateways",
+              "aamarpay",
+              "amarpay",
+              "authorize",
+              "autorize.net",
+              "btcpay",
+              "btc pay",
+              "binance",
+              "blockchain",
+              "cashmaal",
+              "checkout",
+              "coinbase commerce",
+              "coingate",
+              "coinpayments",
+              "flutterwave",
+              "instamojo",
+              "mercado pago",
+              "mollie",
+              "nmi",
+              "now payments",
+              "nowpayments",
+              "payeer",
+              "paypal",
+              "paystack",
+              "paytm",
+              "perfect money",
+              "perfectmoney",
+              "razorpay",
+              "skrill",
+              "sslcommerz",
+              "stripe",
+              "twocheckout",
+              "two checkout",
+              "2checkout",
+            ],
+            title: "Payment Gateways",
+            subtitle:
+              "Configure automatic or manual payment gateways to accept payment from users.",
+            icon: "las la-credit-card",
+            route_name: "admin.gateway.automatic.index",
+          },
+          withdrawals_methods: {
+            keyword: [
+              "manual withdrawal",
+              "payout",
+              "payment withdrawal",
+              "withdrawal options",
+              "withdrawal settings",
+              "payout methods",
+              "payout settings",
+              "configure withdrawals",
+              "configure payouts",
+            ],
+            title: "Withdrawals Methods",
+            subtitle:
+              "Setup manual withdrawal method so that users of the system can make payout requests through those methods.",
+            icon: "la la-bank",
+            route_name: "admin.withdraw.method.index",
+          },
+          seo_configuration: {
+            keyword: [
+              "SEO",
+              "meta title",
+              "meta description",
+              "meta keywords",
+              "optimization",
+              "meta tags",
+              "SEO configuration",
+            ],
+            title: "SEO Configuration",
+            subtitle:
+              "Configure proper meta title, meta description, meta keywords, etc to make the system SEO-friendly.",
+            icon: "las la-globe",
+            route_name: "admin.seo",
+          },
+          manage_frontend: {
+            keyword: [
+              "frontend",
+              "template",
+              "manage frontend",
+              "frontend contents",
+              "frontend settings",
+              "section settings",
+              "banner",
+              "blog",
+              "social icon",
+              "contact us",
+              "footer",
+              "register disable",
+              "banned",
+            ],
+            title: "Manage Frontend",
+            subtitle: "Control all of the frontend contents of the system.",
+            icon: "la la-html5",
+            route_name: "admin.frontend.index",
+          },
+          manage_pages: {
+            keyword: [
+              "pages",
+              "manage pages",
+              "home page",
+              "contact page",
+              "blog page",
+            ],
+            title: "Manage Pages",
+            subtitle: "Control dynamic and static pages of the system.",
+            icon: "las la-list",
+            route_name: "admin.frontend.manage.pages",
+          },
+          kyc_setting: {
+            keyword: [
+              "KYC",
+              "verification",
+              "kyc verification",
+              "identity verification",
+              "KYC settings",
+              "client verification",
+              "KYC configuration",
+              "customer verification",
+            ],
+            title: "KYC Setting",
+            subtitle:
+              "Configure the dynamic input field to collect information of your client if you need.",
+            icon: "las la-user-check",
+            route_name: "admin.kyc.setting",
+          },
+          social_login_setting: {
+            keyword: [
+              "social login",
+              "social media",
+              "authentication",
+              "social media login",
+              "social media authentication",
+              "facebook login",
+              "google login",
+              "linkedin login",
+            ],
+            title: "Social Login Setting",
+            subtitle:
+              "Provide the required information here to use the login system by social media.",
+            icon: "las la-user-circle",
+            route_name: "admin.setting.socialite.credentials",
+          },
+          language: {
+            keyword: [
+              "language",
+              "localize",
+              "translation",
+              "translate",
+              "internationalization",
+              "language settings",
+              "localization settings",
+              "translation settings",
+              "configure languages",
+              "configure localization",
+            ],
+            title: "Language",
+            subtitle:
+              "Configure your required languages and keywords to localize the system.",
+            icon: "las la-language",
+            route_name: "admin.language.manage",
+          },
+          extensions: {
+            keyword: [
+              "extensions",
+              "plugins",
+              "addons",
+              "extension settings",
+              "plugin settings",
+              "addon settings",
+              "captcha",
+              "custom captcha",
+              "google captcha",
+              "recaptcha",
+              "re-captcha",
+              "re captcha",
+              "tawk",
+              "tawk.to",
+              "tawk to",
+              "analytics",
+              "google analytics",
+              "facebook comment",
+            ],
+            title: "Extensions",
+            subtitle:
+              "Manage extensions of the system here to extend some extra features of the system.",
+            icon: "las la-puzzle-piece",
+            route_name: "admin.extensions.index",
+          },
+          policy_pages: {
+            keyword: [
+              "privacy and policy",
+              "terms and condition",
+              "terms of service",
+            ],
+            title: "Policy Pages",
+            subtitle: "Configure your policy and terms of the system here.",
+            icon: "las la-shield-alt",
+            route_name: "admin.frontend.sections",
+            params: {
+              key: "policy_pages",
+            },
+          },
+          maintenance_mode: {
+            keyword: [
+              "maintenance mode",
+              "system maintenance",
+              "system health",
+              "maintenance settings",
+              "system health settings",
+              "enable maintenance",
+              "disable maintenance",
+              "maintenance configuration",
+            ],
+            title: "Maintenance Mode",
+            subtitle:
+              "Enable or disable the maintenance mode of the system when required.",
+            icon: "las la-robot",
+            route_name: "admin.maintenance.mode",
+          },
+          gdpr_cookie: {
+            keyword: [
+              "GDPR cookie",
+              "cookie policy",
+              "data privacy",
+              "GDPR settings",
+              "cookie policy settings",
+              "data privacy settings",
+            ],
+            title: "GDPR Cookie",
+            subtitle:
+              "Set GDPR Cookie policy if required. It will ask visitor of the system to accept if enabled.",
+            icon: "las la-cookie-bite",
+            route_name: "admin.setting.cookie",
+          },
+          custom_css: {
+            keyword: [
+              "custom CSS",
+              "modify styles",
+              "frontend",
+              "styling",
+              "design customization",
+              "CSS settings",
+              "style settings",
+              "frontend customization",
+              "design settings",
+              "customize CSS",
+            ],
+            title: "Custom CSS",
+            subtitle:
+              "Write custom css here to modify some styles of frontend of the system if you need to.",
+            icon: "lab la-css3-alt",
+            route_name: "admin.setting.custom.css",
+          },
+          sitemap: {
+            keyword: ["Site map", "sitemap", "xml", "sitemap.xml"],
+            title: "Sitemap XML",
+            subtitle: "Insert the sitemap XML here to enhance SEO performance.",
+            icon: "las la-sitemap",
+            route_name: "admin.setting.sitemap",
+          },
+          robots: {
+            keyword: ["Robots", "txt", "robots.txt", "robot.txt"],
+            title: "Robots txt",
+            subtitle:
+              "Insert the robots.txt content here to enhance bot web crawlers and instruct them on how to interact with certain areas of the website.",
+            icon: "las la-robot",
+            route_name: "admin.setting.robot",
+          },
+        },
+        {
+          dashboard: {
+            keyword: [
+              "Dashboard",
+              "Home",
+              "Panel",
+              "Admin",
+              "Control center",
+              "Overview",
+              "Main hub",
+              "Management hub",
+              "Administrative hub",
+              "Central hub",
+              "Command center",
+              "Administrator portal",
+              "Centralized interface",
+              "Admin console",
+              "Management dashboard",
+              "Main screen",
+              "Administrative dashboard",
+              "Command dashboard",
+              "Main control panel",
+            ],
+            title: "Dashboard",
+            icon: "las la-home",
+            route_name: "admin.dashboard",
+            menu_active: "admin.dashboard",
+          },
+          location: {
+            keyword: ["Location", "Place", "Spot", "Area", "Point", "Venue"],
+            title: "Location",
+            icon: "las la-map-marker-alt",
+            route_name: "admin.location.index",
+            menu_active: "admin.location.index",
+          },
+          food: {
+            keyword: [
+              "Manage Food",
+              "Product",
+              "Meal",
+              "Category",
+              "Group",
+              "Class",
+              "Section",
+            ],
+            title: "Foods",
+            icon: "las la-utensils",
+            route_name: "admin.category.index",
+            menu_active: ["admin.category.index", "admin.food.index"],
+          },
+          voucher: {
+            keyword: [
+              "Voucher",
+              "Coupon",
+              "Token",
+              "Offer",
+              "Ticket",
+              "Receipt",
+            ],
+            title: "Voucher and Offer",
+            icon: "las la-gifts",
+            route_name: "admin.voucher.index",
+            menu_active: "admin.voucher.index",
+          },
+          order: {
+            title: "Orders",
+            icon: "las la-cart-arrow-down",
+            menu_active: "admin.order*",
+            counters: ["pendingOrderCount"],
+            submenu: [
+              {
+                keyword: [
+                  "Pending orders",
+                  "Unfulfilled orders",
+                  "Incomplete orders",
+                  "Waiting orders",
+                  "Unprocessed orders",
+                  "Purchase orders",
+                  "Sales orders",
+                  "Item requests",
+                  "Supply orders",
+                  "Customer orders",
+                  "Stock orders",
+                ],
+                counter: "pendingOrderCount",
+                title: "Pending Orders",
+                route_name: "admin.order.pending",
+                menu_active: "admin.order.pending",
+              },
+              {
+                keyword: [
+                  "Delivered Orders",
+                  "Completed shipments",
+                  "Fulfilled orders",
+                  "Completed orders",
+                  "Shipped orders",
+                  "Dispatched orders",
+                  "Closed orders",
+                  "Purchase orders",
+                  "Sales orders",
+                  "Item requests",
+                  "Supply orders",
+                  "Customer orders",
+                  "Stock orders",
+                ],
+                title: "Delivered Orders",
+                route_name: "admin.order.delivered",
+                menu_active: "admin.order.delivered",
+              },
+              {
+                keyword: [
+                  "Canceled orders",
+                  "Voided orders",
+                  "Terminated  orders",
+                  "Aborted  orders",
+                  "Discontinued  orders",
+                  "Stopped  orders",
+                  "Purchase orders",
+                  "Sales orders",
+                  "Item requests",
+                  "Supply orders",
+                  "Customer orders",
+                  "Stock orders",
+                ],
+                title: "Canceled orders",
+                route_name: "admin.order.canceled",
+                menu_active: "admin.order.canceled",
+              },
+            ],
+          },
+          manage_users: {
+            title: "Manage Users",
+            icon: "las la-users",
+            counters: [
+              "bannedUsersCount",
+              "emailUnverifiedUsersCount",
+              "mobileUnverifiedUsersCount",
+            ],
+            menu_active: "admin.users*",
+            submenu: [
+              {
+                keyword: [
+                  "active users",
+                  "Manage Users",
+                  "User management",
+                  "User control",
+                  "User status",
+                  "User activity",
+                  "User analytics",
+                ],
+                title: "Active Users",
+                route_name: "admin.users.active",
+                menu_active: "admin.users.active",
+              },
+              {
+                keyword: [
+                  "banned users",
+                  "Manage Users",
+                  "User management",
+                  "Account bans",
+                  "User activity",
+                ],
+                title: "Banned Users",
+                route_name: "admin.users.banned",
+                menu_active: "admin.users.banned",
+                counter: "bannedUsersCount",
+              },
+              {
+                keyword: [
+                  "email unverified users",
+                  "Manage Users",
+                  "User verification",
+                  "User authentication",
+                  "User management",
+                ],
+                title: "Email Unverified",
+                route_name: "admin.users.email.unverified",
+                menu_active: "admin.users.email.unverified",
+                counter: "emailUnverifiedUsersCount",
+              },
+              {
+                keyword: [
+                  "mobile unverified users",
+                  "Manage Users",
+                  "User verification",
+                  "User authentication",
+                  "User management",
+                ],
+                title: "Mobile Unverified",
+                route_name: "admin.users.mobile.unverified",
+                menu_active: "admin.users.mobile.unverified",
+                counter: "mobileUnverifiedUsersCount",
+              },
+              {
+                keyword: [
+                  "with balance users",
+                  "Manage Users",
+                  "User management",
+                  "User activity",
+                  "Account management",
+                ],
+                title: "With Balance",
+                route_name: "admin.users.with.balance",
+                menu_active: "admin.users.with.balance",
+              },
+              {
+                keyword: [
+                  "all users users",
+                  "Manage Users",
+                  "User management",
+                  "User control",
+                  "User activity",
+                  "User analytics",
+                ],
+                title: "All Users",
+                route_name: "admin.users.all",
+                menu_active: "admin.users.all",
+              },
+              {
+                keyword: [
+                  "send notification users",
+                  "Manage Users",
+                  "User notifications",
+                  "User management",
+                  "User activity",
+                ],
+                title: "Send Notification",
+                route_name: "admin.users.notification.all",
+                menu_active: "admin.users.notification.all",
+              },
+            ],
+          },
+          manage_restaurant: {
+            title: "Restaurants",
+            icon: "las la-utensils",
+            counters: [
+              "bannedRestaurantsCount",
+              "emailUnverifiedRestaurantsCount",
+              "mobileUnverifiedRestaurantsCount",
+              "kycUnverifiedRestaurantsCount",
+              "kycPendingRestaurantsCount",
+            ],
+            menu_active: "admin.restaurants*",
+            submenu: [
+              {
+                keyword: [
+                  "active restaurant",
+                  "Manage restaurant",
+                  "Restaurant management",
+                  "Restaurant control",
+                  "Restaurant status",
+                  "Restaurant activity",
+                  "Restaurant analytics",
+                ],
+                title: "Active Restaurants",
+                route_name: "admin.restaurants.active",
+                menu_active: "admin.restaurants.active",
+              },
+              {
+                keyword: [
+                  "banned restaurants",
+                  "Manage restaurants",
+                  "Restaurant management",
+                  "Account bans",
+                  "Restaurant activity",
+                ],
+                title: "Banned Restaurants",
+                route_name: "admin.restaurants.banned",
+                menu_active: "admin.restaurants.banned",
+                counter: "bannedRestaurantsCount",
+              },
+              {
+                keyword: [
+                  "email unverified restaurants",
+                  "Manage Restaurants",
+                  "Restaurant verification",
+                  "Restaurant authentication",
+                  "Restaurant management",
+                ],
+                title: "Email Unverified",
+                route_name: "admin.restaurants.email.unverified",
+                menu_active: "admin.restaurants.email.unverified",
+                counter: "emailUnverifiedRestaurantsCount",
+              },
+              {
+                keyword: [
+                  "mobile unverified restaurants",
+                  "Manage Restaurants",
+                  "Restaurant verification",
+                  "Restaurant authentication",
+                  "Restaurant management",
+                ],
+                title: "Mobile Unverified",
+                route_name: "admin.restaurants.mobile.unverified",
+                menu_active: "admin.restaurants.mobile.unverified",
+                counter: "mobileUnverifiedRestaurantsCount",
+              },
+              {
+                keyword: [
+                  "kyc unverified restaurants",
+                  "Manage restaurants",
+                  "Restaurant verification",
+                  "Restaurant authentication",
+                  "Restaurant management",
+                ],
+                title: "KYC Unverified",
+                route_name: "admin.restaurants.kyc.unverified",
+                menu_active: "admin.restaurants.kyc.unverified",
+                counter: "kycUnverifiedRestaurantsCount",
+              },
+              {
+                keyword: [
+                  "kyc pending restaurants",
+                  "Manage Restaurants",
+                  "Restaurant verification",
+                  "Restaurant authentication",
+                  "Restaurant management",
+                ],
+                title: "KYC Pending",
+                route_name: "admin.restaurants.kyc.pending",
+                menu_active: "admin.restaurants.kyc.pending",
+                counter: "kycPendingRestaurantsCount",
+              },
+              {
+                keyword: [
+                  "with balance restaurants",
+                  "Manage Restaurants",
+                  "Restaurant management",
+                  "Restaurant activity",
+                  "Account management",
+                ],
+                title: "With Balance",
+                route_name: "admin.restaurants.with.balance",
+                menu_active: "admin.restaurants.with.balance",
+              },
+              {
+                keyword: [
+                  "all restaurants",
+                  "Manage Restaurants",
+                  "User management",
+                  "Restaurant control",
+                  "Restaurant activity",
+                  "Restaurant analytics",
+                ],
+                title: "All Restaurants",
+                route_name: "admin.restaurants.all",
+                menu_active: "admin.restaurants.all",
+              },
+              {
+                keyword: [
+                  "send notification restaurants",
+                  "Manage Restaurants",
+                  "Restaurant notifications",
+                  "Restaurant management",
+                  "Restaurant activity",
+                ],
+                title: "Send Notification",
+                route_name: "admin.restaurants.notification.all",
+                menu_active: "admin.restaurants.notification.all",
+              },
+            ],
+          },
+          deposits: {
+            title: "Deposits",
+            icon: "las la-file-invoice-dollar",
+            counters: ["pendingDepositsCount"],
+            menu_active: "admin.deposit*",
+            submenu: [
+              {
+                keyword: [
+                  "Pending Deposits",
+                  "Deposits",
+                  "Deposit management",
+                  "Deposit control",
+                  "Deposit status",
+                  "Deposit activity",
+                ],
+                title: "Pending Deposits",
+                route_name: "admin.deposit.pending",
+                menu_active: "admin.deposit.pending",
+                counter: "pendingDepositsCount",
+                params: {
+                  user_id: "",
+                },
+              },
+              {
+                keyword: [
+                  "Approved Deposits",
+                  "Deposits",
+                  "Deposit management",
+                  "Deposit activity",
+                ],
+                title: "Approved Deposits",
+                route_name: "admin.deposit.approved",
+                menu_active: "admin.deposit.approved",
+                params: {
+                  user_id: "",
+                },
+              },
+              {
+                keyword: [
+                  "Successful Deposits",
+                  "Deposits",
+                  "Deposit management",
+                  "Deposit activity",
+                ],
+                title: "Successful Deposits",
+                route_name: "admin.deposit.successful",
+                menu_active: "admin.deposit.successful",
+                params: {
+                  user_id: "",
+                },
+              },
+              {
+                keyword: [
+                  "Rejected Deposits",
+                  "Deposits",
+                  "Deposit management",
+                  "Deposit activity",
+                ],
+                title: "Rejected Deposits",
+                route_name: "admin.deposit.rejected",
+                menu_active: "admin.deposit.rejected",
+                params: {
+                  user_id: "",
+                },
+              },
+              {
+                keyword: [
+                  "Initiated Deposits",
+                  "Deposits",
+                  "Deposit management",
+                  "Deposit activity",
+                ],
+                title: "Initiated Deposits",
+                route_name: "admin.deposit.initiated",
+                menu_active: "admin.deposit.initiated",
+                params: {
+                  user_id: "",
+                },
+              },
+              {
+                keyword: [
+                  "All Deposits",
+                  "Deposits",
+                  "Deposit management",
+                  "Deposit control",
+                  "Deposit activity",
+                ],
+                title: "All Deposits",
+                route_name: "admin.deposit.list",
+                menu_active: "admin.deposit.list",
+                params: {
+                  user_id: "",
+                },
+              },
+            ],
+          },
+          withdrawals: {
+            title: "Withdrawals",
+            icon: "la la-bank",
+            counters: ["pendingWithdrawCount"],
+            menu_active: "admin.withdraw.data*",
+            submenu: [
+              {
+                keyword: [
+                  "Pending Withdrawals",
+                  "Withdrawals",
+                  "Withdrawal management",
+                  "Withdrawal control",
+                  "Withdrawal status",
+                  "Withdrawal activity",
+                ],
+                title: "Pending Withdrawals",
+                route_name: "admin.withdraw.data.pending",
+                menu_active: "admin.withdraw.data.pending",
+                counter: "pendingWithdrawCount",
+                params: {
+                  user_id: "",
+                },
+              },
+              {
+                keyword: [
+                  "Approved Withdrawals",
+                  "Withdrawals",
+                  "Withdrawal management",
+                  "Withdrawal activity",
+                ],
+                title: "Approved Withdrawals",
+                route_name: "admin.withdraw.data.approved",
+                menu_active: "admin.withdraw.data.approved",
+                params: {
+                  user_id: "",
+                },
+              },
+              {
+                keyword: [
+                  "Rejected Withdrawals",
+                  "Withdrawals",
+                  "Withdrawal management",
+                  "Withdrawal activity",
+                ],
+                title: "Rejected Withdrawals",
+                route_name: "admin.withdraw.data.rejected",
+                menu_active: "admin.withdraw.data.rejected",
+                params: {
+                  user_id: "",
+                },
+              },
+              {
+                keyword: [
+                  "All Withdrawals",
+                  "Withdrawals",
+                  "Withdrawal management",
+                  "Withdrawal control",
+                  "Withdrawal activity",
+                ],
+                title: "All Withdrawals",
+                route_name: "admin.withdraw.data.all",
+                menu_active: "admin.withdraw.data.all",
+                params: {
+                  user_id: "",
+                },
+              },
+            ],
+          },
+          support_ticket: {
+            title: "Support Ticket",
+            icon: "la la-ticket",
+            counters: ["pendingTicketCount"],
+            menu_active: "admin.ticket*",
+            submenu: [
+              {
+                keyword: [
+                  "Pending Ticket",
+                  "Support Ticket",
+                  "Ticket management",
+                  "Ticket control",
+                  "Ticket status",
+                  "Ticket activity",
+                ],
+                title: "Pending Ticket",
+                route_name: "admin.ticket.pending",
+                menu_active: "admin.ticket.pending",
+                counter: "pendingTicketCount",
+              },
+              {
+                keyword: [
+                  "Closed Ticket",
+                  "Support Ticket",
+                  "Ticket management",
+                  "Ticket activity",
+                ],
+                title: "Closed Ticket",
+                route_name: "admin.ticket.closed",
+                menu_active: "admin.ticket.closed",
+              },
+              {
+                keyword: [
+                  "Answered Ticket",
+                  "Support Ticket",
+                  "Ticket management",
+                  "Ticket activity",
+                ],
+                title: "Answered Ticket",
+                route_name: "admin.ticket.answered",
+                menu_active: "admin.ticket.answered",
+              },
+              {
+                keyword: [
+                  "All Ticket",
+                  "Support Ticket",
+                  "Ticket management",
+                  "Ticket control",
+                  "Ticket activity",
+                ],
+                title: "All Ticket",
+                route_name: "admin.ticket.index",
+                menu_active: "admin.ticket.index",
+              },
+            ],
+          },
+          reports: {
+            title: "Users Report",
+            icon: "la la-list",
+            menu_active: "admin.report*",
+            submenu: [
+              {
+                keyword: [
+                  "Transaction Log",
+                  "Report",
+                  "Transaction report",
+                  "Transaction history",
+                  "Transaction activity",
+                  "balance sheet",
+                  "balance log",
+                  "balance history",
+                ],
+                title: "Transaction History",
+                route_name: "admin.report.transaction",
+                menu_active: [
+                  "admin.report.transaction",
+                  "admin.report.transaction.search",
+                ],
+                params: {
+                  user_id: "",
+                },
+              },
+              {
+                keyword: [
+                  "Login History",
+                  "Report",
+                  "Login report",
+                  "Login history",
+                  "Login activity",
+                ],
+                title: "Login History",
+                route_name: "admin.report.login.history",
+                menu_active: [
+                  "admin.report.login.history",
+                  "admin.report.login.ipHistory",
+                ],
+              },
+              {
+                keyword: [
+                  "Notification History",
+                  "Report",
+                  "Notification report",
+                  "Notification history",
+                  "Notification activity",
+                  "email log",
+                  "email history",
+                  "sms log",
+                  "sms history",
+                  "push notification log",
+                  "push notification history",
+                ],
+                title: "Notification History",
+                route_name: "admin.report.notification.history",
+                menu_active: "admin.report.notification.history",
+              },
+            ],
+          },
+          restaurant_reports: {
+            title: "Restaurants Report",
+            icon: "la la-list",
+            menu_active: "admin.restaurant.report*",
+            submenu: [
+              {
+                keyword: [
+                  "Transaction Log",
+                  "Report",
+                  "Transaction report",
+                  "Transaction history",
+                  "Transaction activity",
+                  "balance sheet",
+                  "balance log",
+                  "balance history",
+                ],
+                title: "Transaction History",
+                route_name: "admin.restaurant.report.transaction",
+                menu_active: [
+                  "admin.restaurant.report.transaction",
+                  "admin.restaurant.report.transaction.search",
+                ],
+                params: {
+                  restaurant_id: "",
+                },
+              },
+              {
+                keyword: [
+                  "Login History",
+                  "Report",
+                  "Login report",
+                  "Login history",
+                  "Login activity",
+                ],
+                title: "Login History",
+                route_name: "admin.restaurant.report.login.history",
+                menu_active: [
+                  "admin.restaurant.report.login.history",
+                  "admin.restaurant.report.login.ipHistory",
+                ],
+              },
+              {
+                keyword: [
+                  "Notification History",
+                  "Report",
+                  "Notification report",
+                  "Notification history",
+                  "Notification activity",
+                  "email log",
+                  "email history",
+                  "sms log",
+                  "sms history",
+                  "push notification log",
+                  "push notification history",
+                ],
+                title: "Notification History",
+                route_name: "admin.restaurant.report.notification.history",
+                menu_active: "admin.restaurant.report.notification.history",
+              },
+            ],
+          },
+          subscriber: {
+            keyword: [
+              "subscriber",
+              "subscribers",
+              "Subscription management",
+              "Subscriber list",
+              "Subscriber activity",
+            ],
+            title: "Subscribers",
+            icon: "las la-thumbs-up",
+            route_name: "admin.subscriber.index",
+            menu_active: "admin.subscriber.*",
+          },
+          system_setting: {
+            keyword: [
+              "System Setting",
+              "setting",
+              "System configuration",
+              "System preferences",
+              "Configuration management",
+              "System setup",
+            ],
+            title: "System Setting",
+            icon: "las la-life-ring",
+            route_name: "admin.setting.system",
+            menu_active: [
+              "admin.setting.system",
+              "admin.setting.general",
+              "admin.setting.socialite.credentials",
+              "admin.setting.system.configuration",
+              "admin.setting.logo.icon",
+              "admin.extensions.index",
+              "admin.language.manage",
+              "admin.language.key",
+              "admin.seo",
+              "admin.kyc.setting",
+              "admin.frontend.templates",
+              "admin.frontend.manage.*",
+              "admin.maintenance.mode",
+              "admin.setting.cookie",
+              "admin.setting.custom.css",
+              "admin.setting.sitemap",
+              "admin.setting.robot",
+              "admin.setting.notification.global.email",
+              "admin.setting.notification.global.sms",
+              "admin.setting.notification.global.push",
+              "admin.setting.notification.email",
+              "admin.setting.notification.sms",
+              "admin.setting.notification.push",
+              "admin.setting.notification.templates",
+              "admin.setting.notification.template.edit",
+              "admin.frontend.index",
+              "admin.frontend.sections*",
+              "admin.gateway*",
+              "admin.withdraw.method*",
+              "admin.setting.app.purchase",
+            ],
+          },
+          extra: {
+            title: "Extra",
+            icon: "la la-server",
+            menu_active: "admin.system*",
+            counters: ["updateAvailable"],
+            submenu: [
+              {
+                keyword: [
+                  "Application",
+                  "System",
+                  "Application management",
+                  "Application settings",
+                  "System information",
+                  "version",
+                  "laravel",
+                  "timezone",
+                ],
+                title: "Application",
+                route_name: "admin.system.info",
+                menu_active: "admin.system.info",
+              },
+              {
+                keyword: [
+                  "Server",
+                  "System",
+                  "Server management",
+                  "Server settings",
+                  "System information",
+                  "version",
+                  "php version",
+                  "software",
+                  "ip address",
+                  "server ip address",
+                  "server port",
+                  "http host",
+                ],
+                title: "Server",
+                route_name: "admin.system.server.info",
+                menu_active: "admin.system.server.info",
+              },
+              {
+                keyword: [
+                  "Cache",
+                  "System",
+                  "Cache management",
+                  "Cache optimization",
+                  "System performance",
+                  "clear cache",
+                ],
+                title: "Cache",
+                route_name: "admin.system.optimize",
+                menu_active: "admin.system.optimize",
+              },
+              {
+                keyword: [
+                  "Update",
+                  "System",
+                  "Update management",
+                  "System update",
+                  "Software updates",
+                  "version update",
+                  "upgrade",
+                  "latest version",
+                ],
+                title: "Update",
+                route_name: "admin.system.update",
+                menu_active: "admin.system.update*",
+                counter: "updateAvailable",
+              },
+            ],
+          },
+          report_and_request: {
+            keyword: [
+              "Report \u0026 Request",
+              "Report and Request",
+              "Reports and Requests",
+              "Reporting and Requests",
+              "Report management",
+              "Request management",
+              "feature request",
+              "bug report",
+            ],
+            title: "Report \u0026 Request",
+            icon: "las la-bug",
+            route_name: "admin.request.report",
+            menu_active: "admin.request.report",
+          },
+        }
+      );
+
+      $(".navbar__action-list .dropdown-menu").on("click", function (event) {
+        event.stopPropagation();
+      });
+    </script>
+    <script src="assets/admin/js/search.js"></script>
+    <script>
+      "use strict";
+
+      function getEmptyMessage() {
+        return `<li class="text-muted">
+                <div class="empty-search text-center">
+                    <img src="assets/images/empty_list.png" alt="empty">
+                    <p class="text-muted">No search result found</p>
+                </div>
+            </li>`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,870 @@
+<!-- meta tags and other links -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hyderabadi-chai - Dashboard</title>
+
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="assets/images/logo_icon/favicon.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/global/css/bootstrap.min.css?v=2.0" />
+
+    <link
+      rel="stylesheet"
+      href="assets/admin/css/vendor/bootstrap-toggle.min.css"
+    />
+    <link rel="stylesheet" href="assets/global/css/all.min.css?v=2.0" />
+    <link rel="stylesheet" href="assets/global/css/line-awesome.min.css" />
+
+    <link
+      type="text/css"
+      href="assets/admin/css/daterangepicker.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/global/css/select2.min.css" />
+    <link rel="stylesheet" href="assets/admin/css/app.css?v=2.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+      integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .apexcharts-menu {
+        min-width: 120px !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- page-wrapper start -->
+    <div class="page-wrapper default-version">
+      <div class="sidebar bg--dark">
+        <button class="res-sidebar-close-btn">
+          <i class="las la-times"></i>
+        </button>
+        <div class="sidebar__inner">
+          <div class="sidebar__logo">
+            <a href="dashboard.html" class="sidebar__main-logo"
+              ><img src="assets/images/logo_icon/logo.png" alt="image"
+            /></a>
+          </div>
+          <div class="sidebar__menu-wrapper">
+            <ul class="sidebar__menu">
+              <li class="sidebar-menu-item">
+                <a href="dashboard.html" class="nav-link">
+                  <i class="menu-icon las la-home"></i>
+                  <span class="menu-title">Dashboard</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item">
+                <a href="location.html" class="nav-link">
+                  <i class="menu-icon las la-map-marker-alt"></i>
+                  <span class="menu-title">Location</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item">
+                <a href="category.html" class="nav-link">
+                  <i class="menu-icon las la-utensils"></i>
+                  <span class="menu-title">Foods</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item">
+                <a href="voucher.html" class="nav-link">
+                  <i class="menu-icon las la-gifts"></i>
+                  <span class="menu-title">Voucher and Offer</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon las la-cart-arrow-down"></i>
+                  <span class="menu-title">Orders</span>
+                  <span
+                    class="menu-badge menu-badge-level-one bg--warning ms-auto"
+                  >
+                    <i class="fas fa-exclamation"></i>
+                  </span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item">
+                      <a href="order-pending.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Pending Orders</span>
+                        <span class="menu-badge bg--info ms-auto">5</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="order-delivered.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Delivered Orders</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="order-canceled.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Canceled orders</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon las la-users"></i>
+                  <span class="menu-title">Manage Users</span>
+                  <span
+                    class="menu-badge menu-badge-level-one bg--warning ms-auto"
+                  >
+                    <i class="fas fa-exclamation"></i>
+                  </span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item">
+                      <a href="users-active.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Active Users</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="users-banned.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Banned Users</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="users-email-unverified.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Email Unverified</span>
+                        <span class="menu-badge bg--info ms-auto">8</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="users-mobile-unverified.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Mobile Unverified</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="users-with-balance.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">With Balance</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="all-users.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">All Users</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="users-send-notification.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Send Notification</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon las la-utensils"></i>
+                  <span class="menu-title">Restaurants</span>
+                  <span
+                    class="menu-badge menu-badge-level-one bg--warning ms-auto"
+                  >
+                    <i class="fas fa-exclamation"></i>
+                  </span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item">
+                      <a href="restaurants-active.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Active Restaurants</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="restaurants-banned.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Banned Restaurants</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        href="restaurants-email-unverified.html"
+                        class="nav-link"
+                      >
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Email Unverified</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        href="restaurants-mobile-unverified.html"
+                        class="nav-link"
+                      >
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Mobile Unverified</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        href="restaurants-kyc-unverified.html"
+                        class="nav-link"
+                      >
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">KYC Unverified</span>
+                        <span class="menu-badge bg--info ms-auto">6</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="restaurants-kyc-pending.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">KYC Pending</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="restaurants-with-balance.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">With Balance</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="all-restaurants.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">All Restaurants</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        href="restaurants-send-notification.html"
+                        class="nav-link"
+                      >
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Send Notification</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown active">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon las la-file-invoice-dollar"></i>
+                  <span class="menu-title">Deposits</span>
+                  <span
+                    class="menu-badge menu-badge-level-one bg--warning ms-auto"
+                  >
+                    <i class="fas fa-exclamation"></i>
+                  </span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item">
+                      <a href="deposit-pending.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Pending Deposits</span>
+                        <span class="menu-badge bg--info ms-auto">3</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item active">
+                      <a href="deposit-approved.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Approved Deposits</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="deposit-successful.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Successful Deposits</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="deposit-rejected.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Rejected Deposits</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="deposit-initiated.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Initiated Deposits</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="deposit-all.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">All Deposits</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon la la-bank"></i>
+                  <span class="menu-title">Withdrawals</span>
+                  <span
+                    class="menu-badge menu-badge-level-one bg--warning ms-auto"
+                  >
+                    <i class="fas fa-exclamation"></i>
+                  </span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item">
+                      <a href="withdraw-pending.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Pending Withdrawals</span>
+                        <span class="menu-badge bg--info ms-auto">1</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="withdraw-approved.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Approved Withdrawals</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="withdraw-rejected.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Rejected Withdrawals</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="withdraw-all.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">All Withdrawals</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon la la-ticket"></i>
+                  <span class="menu-title">Support Ticket</span>
+                  <span
+                    class="menu-badge menu-badge-level-one bg--warning ms-auto"
+                  >
+                    <i class="fas fa-exclamation"></i>
+                  </span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item">
+                      <a href="ticket-pending.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Pending Ticket</span>
+                        <span class="menu-badge bg--info ms-auto">3</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="ticket-closed.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Closed Ticket</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="ticket-answered.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Answered Ticket</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="all-ticket.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">All Ticket</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon la la-list"></i>
+                  <span class="menu-title">Users Report</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item">
+                      <a href="report-transaction.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Transaction History</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="report-login-history.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Login History</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        href="report-notification-history.html"
+                        class="nav-link"
+                      >
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Notification History</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon la la-list"></i>
+                  <span class="menu-title">Restaurants Report</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item">
+                      <a
+                        href="restaurant-report-transaction.html"
+                        class="nav-link"
+                      >
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Transaction History</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        href="restaurant-report-login-history.html"
+                        class="nav-link"
+                      >
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Login History</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a
+                        href="restaurant-report-notification-history.html"
+                        class="nav-link"
+                      >
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Notification History</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item">
+                <a href="subscriber.html" class="nav-link">
+                  <i class="menu-icon las la-thumbs-up"></i>
+                  <span class="menu-title">Subscribers</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item">
+                <a href="system-setting.html" class="nav-link">
+                  <i class="menu-icon las la-life-ring"></i>
+                  <span class="menu-title">System Setting</span>
+                </a>
+              </li>
+              <li class="sidebar-menu-item sidebar-dropdown">
+                <a href="javascript:void(0)" class="">
+                  <i class="menu-icon la la-server"></i>
+                  <span class="menu-title">Extra</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li class="sidebar-menu-item">
+                      <a href="system-info.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Application</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="system-server-info.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Server</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="system-optimize.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Cache</span>
+                      </a>
+                    </li>
+                    <li class="sidebar-menu-item">
+                      <a href="system-system-update.html" class="nav-link">
+                        <i class="menu-icon las la-dot-circle"></i>
+                        <span class="menu-title">Update</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-menu-item">
+                <a href="request-report.html" class="nav-link">
+                  <i class="menu-icon las la-bug"></i>
+                  <span class="menu-title">Report &amp; Request</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="version-info text-center text-uppercase">
+            <span class="text--primary">Hyderabadi-Chai</span>
+            <span class="text--success">V2.0 </span>
+          </div>
+        </div>
+      </div>
+      <!-- sidebar end -->
+
+      <!-- navbar-wrapper start -->
+      <nav class="navbar-wrapper bg--dark d-flex flex-wrap">
+        <div class="navbar__left">
+          <button type="button" class="res-sidebar-open-btn me-3">
+            <i class="las la-bars"></i>
+          </button>
+          <form class="navbar-search">
+            <input
+              type="search"
+              name="#0"
+              class="navbar-search-field"
+              id="searchInput"
+              autocomplete="off"
+              placeholder="Search here..."
+            />
+            <i class="las la-search"></i>
+            <ul class="search-list"></ul>
+          </form>
+        </div>
+        <div class="navbar__right">
+          <ul class="navbar__action-list">
+            <li>
+              <button
+                type="button"
+                class="primary--layer"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Visit Website"
+              >
+                <a href="" target="_blank"><i class="las la-globe"></i></a>
+              </button>
+            </li>
+            <li class="dropdown">
+              <button
+                type="button"
+                class="primary--layer notification-bell"
+                data-bs-toggle="dropdown"
+                data-display="static"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <span
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="bottom"
+                  title="Unread Notifications"
+                >
+                  <i class="las la-bell icon-left-right"></i>
+                </span>
+                <span class="notification-count">9+</span>
+              </button>
+              <div
+                class="dropdown-menu dropdown-menu--md p-0 border-0 box--shadow1 dropdown-menu-right"
+              >
+                <div class="dropdown-menu__header">
+                  <span class="caption">Notification</span>
+                  <p>You have 92 unread notification</p>
+                </div>
+                <div class="dropdown-menu__body">
+                  <a href="" class="dropdown-menu__item">
+                    <div class="navbar-notifi">
+                      <div class="navbar-notifi__right">
+                        <h6 class="notifi__title">New member registered</h6>
+                        <span class="time"
+                          ><i class="far fa-clock"></i> 22 hours ago</span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                  <a href="" class="dropdown-menu__item">
+                    <div class="navbar-notifi">
+                      <div class="navbar-notifi__right">
+                        <h6 class="notifi__title">New member registered</h6>
+                        <span class="time"
+                          ><i class="far fa-clock"></i> 1 day ago</span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                  <a href="" class="dropdown-menu__item">
+                    <div class="navbar-notifi">
+                      <div class="navbar-notifi__right">
+                        <h6 class="notifi__title">New member registered</h6>
+                        <span class="time"
+                          ><i class="far fa-clock"></i> 4 days ago</span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                  <a href="" class="dropdown-menu__item">
+                    <div class="navbar-notifi">
+                      <div class="navbar-notifi__right">
+                        <h6 class="notifi__title">New member registered</h6>
+                        <span class="time"
+                          ><i class="far fa-clock"></i> 1 week ago</span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                  <a href="" class="dropdown-menu__item">
+                    <div class="navbar-notifi">
+                      <div class="navbar-notifi__right">
+                        <h6 class="notifi__title">New member registered</h6>
+                        <span class="time"
+                          ><i class="far fa-clock"></i> 1 week ago</span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                  <a href="" class="dropdown-menu__item">
+                    <div class="navbar-notifi">
+                      <div class="navbar-notifi__right">
+                        <h6 class="notifi__title">New member registered</h6>
+                        <span class="time"
+                          ><i class="far fa-clock"></i> 1 week ago</span
+                        >
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="dropdown-menu__footer">
+                  <a href="notifications.html" class="view-all-message"
+                    >View all notifications</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="primary--layer"
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="System Setting"
+              >
+                <a href="system-setting.html"><i class="las la-wrench"></i></a>
+              </button>
+            </li>
+            <li class="dropdown d-flex profile-dropdown">
+              <button
+                type="button"
+                data-bs-toggle="dropdown"
+                data-display="static"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <span class="navbar-user">
+                  <span class="navbar-user__thumb"
+                    ><img
+                      src="assets/admin/images/profile/66a22d005e0521721904384.png"
+                      alt="image"
+                  /></span>
+                  <span class="navbar-user__info">
+                    <span class="navbar-user__name">admin</span>
+                  </span>
+                  <span class="icon"
+                    ><i class="las la-chevron-circle-down"></i
+                  ></span>
+                </span>
+              </button>
+              <div
+                class="dropdown-menu dropdown-menu--sm p-0 border-0 box--shadow1 dropdown-menu-right"
+              >
+                <a
+                  href="profile.html"
+                  class="dropdown-menu__item d-flex align-items-center px-3 py-2"
+                >
+                  <i class="dropdown-menu__icon las la-user-circle"></i>
+                  <span class="dropdown-menu__caption">Profile</span>
+                </a>
+
+                <a
+                  href="password.html"
+                  class="dropdown-menu__item d-flex align-items-center px-3 py-2"
+                >
+                  <i class="dropdown-menu__icon las la-key"></i>
+                  <span class="dropdown-menu__caption">Password</span>
+                </a>
+
+                <a
+                  href="index.html"
+                  class="dropdown-menu__item d-flex align-items-center px-3 py-2"
+                >
+                  <i class="dropdown-menu__icon las la-sign-out-alt"></i>
+                  <span class="dropdown-menu__caption">Logout</span>
+                </a>
+              </div>
+              <button type="button" class="breadcrumb-nav-open ms-2 d-none">
+                <i class="las la-sliders-h"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- navbar-wrapper end -->
+
+      <div class="container-fluid px-3 px-sm-0">
+        <div class="body-wrapper">
+          <div class="bodywrapper__inner">
+            <div
+              class="d-flex mb-30 flex-wrap gap-3 justify-content-between align-items-center"
+            >
+              <h6 class="page-title">Approved Deposits</h6>
+              <div
+                class="d-flex flex-wrap justify-content-end gap-2 align-items-center breadcrumb-plugins"
+              >
+                <form class="d-flex flex-wrap gap-2">
+                  <div class="input-group w-auto flex-fill">
+                    <input
+                      type="search"
+                      name="search"
+                      class="form-control bg--white"
+                      placeholder="Username / TRX"
+                      value=""
+                    />
+                    <button class="btn btn--primary" type="submit">
+                      <i class="la la-search"></i>
+                    </button>
+                  </div>
+                  <div class="input-group w-auto flex-fill">
+                    <input
+                      name="date"
+                      type="search"
+                      class="datepicker-here form-control bg--white pe-2 date-range"
+                      placeholder="Start Date - End Date"
+                      autocomplete="off"
+                      value=""
+                    />
+                    <button class="btn btn--primary input-group-text">
+                      <i class="la la-search"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-body p-0">
+                    <div class="table-responsive--sm table-responsive">
+                      <table class="table table--light style--two">
+                        <thead>
+                          <tr>
+                            <th>Gateway | Transaction</th>
+                            <th>Initiated</th>
+                            <th>User</th>
+                            <th>Amount</th>
+                            <th>Conversion</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <span class="fw-bold">
+                                <a href="deposite-details.html">
+                                  Bank Transfer
+                                </a>
+                              </span>
+                              <br />
+                              <small> B15TN8SXBBBE </small>
+                            </td>
+
+                            <td>2024-07-25 03:15 PM<br />4 months ago</td>
+                            <td>
+                              <span class="fw-bold">Cynthia Bryan</span>
+                              <br />
+                              <span class="small">
+                                <a href="deposite-details.html"
+                                  ><span>@</span>tiwuhozog</a
+                                >
+                              </span>
+                            </td>
+                            <td>
+                              $216.40 USD +
+                              <span class="text--danger" title="charge"
+                                >$3.16 USD
+                              </span>
+                              <br />
+                              <strong title="Amount with charge">
+                                $219.56 USD
+                              </strong>
+                            </td>
+                            <td>
+                              $1.00 USD = 1.00 USD
+                              <br />
+                              <strong>219.56 USD</strong>
+                            </td>
+                            <td>
+                              <span
+                                ><span class="badge badge--success"
+                                  >Approved</span
+                                ><br />4 months ago</span
+                              >
+                            </td>
+                            <td>
+                              <a
+                                href="deposite-details.html"
+                                class="btn btn-sm btn-outline--primary ms-1"
+                              >
+                                <i class="la la-desktop"></i> Details
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!-- table end -->
+                    </div>
+                  </div>
+                </div>
+                <!-- card end -->
+              </div>
+            </div>
+          </div>
+          <!-- bodywrapper__inner end -->
+        </div>
+        <!-- body-wrapper end -->
+      </div>
+    </div>
+
+    <script src="assets/global/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/global/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/admin/js/vendor/bootstrap-toggle.min.js"></script>
+
+    <link href="assets/global/css/iziToast.min.css" rel="stylesheet" />
+    <link href="assets/global/css/iziToast_custom.css" rel="stylesheet" />
+    <script src="assets/global/js/iziToast.min.js"></script>
+
+    <script src="assets/admin/js/moment.min.js"></script>
+    <script src="assets/admin/js/daterangepicker.min.js"></script>
+
+    <script src="assets/global/js/nicEdit.js"></script>
+    <script src="assets/admin/js/cuModal.js"></script>
+    <script src="assets/global/js/select2.min.js"></script>
+    <script src="assets/admin/js/app.js?v=2.0"></script>
+
+    <script src="assets/admin/js/search.js"></script>
+  </body>
+</html>
